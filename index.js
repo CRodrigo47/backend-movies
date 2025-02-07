@@ -11,7 +11,7 @@ const { json } = require("express");
 app.use(morgan("dev"));
 app.use(
   cors({
-    origin: ["https://movie-billboard-crud-react-ts.vercel.app"], // ✅ Permitir solo tu frontend
+    origin: "*", // ✅ Permitir solo tu frontend
     methods: ["GET", "POST", "PUT", "DELETE"], // ✅ Métodos permitidos
     allowedHeaders: ["Content-Type", "Authorization"], // ✅ Cabeceras permitidas
   })
