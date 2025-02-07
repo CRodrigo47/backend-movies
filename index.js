@@ -8,7 +8,6 @@ const { mongoose } = require("./database"); //Ayuda a la gestion y creación de 
 const { json } = require("express");
 
 //Middleware
-app.use(morgan("dev"));
 app.use(
   cors({
     origin: "*", // ✅ Permitir solo tu frontend
@@ -16,6 +15,8 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"], // ✅ Cabeceras permitidas
   })
 );
+app.options("*", cors());
+app.use(morgan("dev"));
 app.use(express.json());
 
 //Routes
