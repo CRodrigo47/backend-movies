@@ -8,14 +8,7 @@ const { mongoose } = require("./database"); //Ayuda a la gestion y creación de 
 const { json } = require("express");
 
 //Middleware
-app.use(
-  cors({
-    origin: "*", // ✅ Permitir solo tu frontend
-    methods: ["GET", "POST", "PUT", "DELETE"], // ✅ Métodos permitidos
-    allowedHeaders: ["Content-Type", "Authorization"], // ✅ Cabeceras permitidas
-  })
-);
-app.options("*", cors());
+app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 
